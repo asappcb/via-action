@@ -1,0 +1,37 @@
+# The via GitHub Action (#32). This file is published to the PUBLIC
+# asappcb/via-action repo; it references a PREBUILT image so the via source
+# stays private (the image is built from action/Dockerfile in via's own CI).
+#
+# For local dev in this repo, swap `image:` to `Dockerfile` (builds from source).
+name: 'via board review'
+description: 'Run via CI checks (DRC · connectivity · schematic-parity · DFM · BOM · cost) on changed KiCad boards in a PR and gate the merge.'
+author: 'asappcb'
+branding:
+  icon: 'check-circle'
+  color: 'orange'
+
+inputs:
+  boards:
+    description: 'Glob of board paths to check. Empty = auto-detect changed .kicad_pcb in the PR.'
+    required: false
+    default: ''
+  parts-csv:
+    description: 'Path (in the repo) to a JLC/LCSC parts CSV export — enables BOM/cost checks.'
+    required: false
+    default: ''
+  comment:
+    description: 'Post/update a PR comment with the differential.'
+    required: false
+    default: 'true'
+  github-token:
+    description: 'Token used to post the PR comment.'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  gate:
+    description: 'pass | fail — whether any board failed its gate.'
+
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/asappcb/via-action:v1'
