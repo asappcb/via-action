@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#141b2e"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffc27a"/>
+      <stop offset="1" stop-color="#e07b39"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e07b39" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#e07b39" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- full-bleed background -->
+  <rect x="0" y="0" width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- PCB traces: top-right + bottom-left, subtle -->
+  <g fill="none" stroke="url(#copper)" stroke-width="2.5" opacity="0.13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M980 70 H1120 L1170 120 H1260"/>
+    <path d="M1040 150 H1150 L1200 200"/>
+    <path d="M1130 70 V40"/>
+    <path d="M20 590 H150 L200 540 H320"/>
+    <path d="M60 500 H170 L210 540"/>
+    <path d="M150 590 V615"/>
+  </g>
+  <g fill="url(#copper)" opacity="0.45">
+    <circle cx="1170" cy="120" r="5"/>
+    <circle cx="1200" cy="200" r="5"/>
+    <circle cx="200" cy="540" r="5"/>
+    <circle cx="320" cy="540" r="4"/>
+  </g>
+
+  <!-- via glyph -->
+  <g transform="translate(640 196)">
+    <circle cx="0" cy="0" r="86" fill="url(#glow)"/>
+    <g stroke="url(#copper)" stroke-width="6" stroke-linecap="round" opacity="0.85">
+      <path d="M-108 -34 H-62"/>
+      <path d="M108 -34 H62"/>
+      <path d="M-108 34 H-62"/>
+      <path d="M108 34 H62"/>
+    </g>
+    <circle cx="0" cy="0" r="52" fill="none" stroke="url(#copper)" stroke-width="15"/>
+    <circle cx="0" cy="0" r="31" fill="#0b1020" stroke="url(#copper)" stroke-width="3" opacity="0.9"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="640" y="392" text-anchor="middle" font-size="176" font-weight="800" letter-spacing="-5" fill="#f5f8ff">via</text>
+
+  <!-- accent rule -->
+  <rect x="548" y="418" width="184" height="6" rx="3" fill="url(#copper)"/>
+
+  <!-- tagline -->
+  <text x="640" y="486" text-anchor="middle" font-size="44" font-weight="600" fill="#d3deef">CI/CD for boards</text>
+
+  <!-- sub -->
+  <text x="640" y="530" text-anchor="middle" font-size="27" font-weight="500" fill="#8ea0bd">checks on every PR, gated on the diff</text>
+
+  <!-- footer -->
+  <g opacity="0.85">
+    <circle cx="547" cy="592" r="5" fill="none" stroke="url(#copper)" stroke-width="2.5"/>
+    <text x="565" y="598" font-size="22" font-weight="500" fill="#67789a">asappcb/via-action</text>
+  </g>
+</svg>
