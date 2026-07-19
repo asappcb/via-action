@@ -56,5 +56,5 @@
 
   <!-- tagline -->
   <text x="262" y="250" font-family="'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif"
-        font-size="27" font-weight="500" fill="#9fb0cc">CI/CD for boards — KiCad checks on every PR, gated on the diff</text>
+        font-size="27" font-weight="500" fill="#9fb0cc">CI/CD for boards — checks on every PR, gated on the diff</text>
 </svg>
