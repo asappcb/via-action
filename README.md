@@ -1,7 +1,12 @@
-# via-action
+<p align="center">
+  <img src="assets/header.svg" alt="via — CI/CD for boards" width="820">
+</p>
 
-Run **via** board checks on the KiCad boards changed in a pull request, and gate
-the merge — as a GitHub check + a PR comment.
+<p align="center">
+  Run <b>via</b> board checks on the KiCad boards changed in a pull request, and gate the merge — as a GitHub check + a PR comment.
+</p>
+
+---
 
 Instead of dumping the whole violation list every time, via **diffs the results
 against the base branch and tells you what *this change* broke**: new errors

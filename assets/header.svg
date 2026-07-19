@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="via — CI/CD for boards">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#141b2e"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffc27a"/>
+      <stop offset="1" stop-color="#e07b39"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e07b39" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#e07b39" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- card -->
+  <rect x="0" y="0" width="1200" height="300" rx="20" fill="url(#bg)"/>
+
+  <!-- subtle PCB traces -->
+  <g fill="none" stroke="url(#copper)" stroke-width="2" opacity="0.14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M765 60 H980 L1030 110 H1150"/>
+    <path d="M810 250 H960 L1000 210 H1150"/>
+    <path d="M700 150 H900 L940 190 H1130"/>
+    <path d="M1030 40 V95"/>
+    <path d="M885 260 V215 L925 175"/>
+  </g>
+  <g fill="url(#copper)" opacity="0.5">
+    <circle cx="1030" cy="110" r="4.5"/>
+    <circle cx="1000" cy="210" r="4.5"/>
+    <circle cx="940" cy="190" r="4.5"/>
+    <circle cx="1150" cy="150" r="3.5"/>
+  </g>
+
+  <!-- via glyph: a plated through-hole connecting layers -->
+  <g transform="translate(148 150)">
+    <circle cx="0" cy="0" r="70" fill="url(#glow)"/>
+    <!-- copper layers it stitches together -->
+    <g stroke="url(#copper)" stroke-width="6" stroke-linecap="round" opacity="0.85">
+      <path d="M-92 -30 H-52"/>
+      <path d="M92 -30 H52"/>
+      <path d="M-92 30 H-52"/>
+      <path d="M92 30 H52"/>
+    </g>
+    <!-- annular ring + barrel -->
+    <circle cx="0" cy="0" r="44" fill="none" stroke="url(#copper)" stroke-width="13"/>
+    <circle cx="0" cy="0" r="27" fill="#0b1020" stroke="url(#copper)" stroke-width="2.5" opacity="0.9"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="256" y="176" font-family="'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif"
+        font-size="128" font-weight="800" letter-spacing="-3" fill="#f5f8ff">via</text>
+
+  <!-- accent rule -->
+  <rect x="260" y="205" width="196" height="5" rx="2.5" fill="url(#copper)"/>
+
+  <!-- tagline -->
+  <text x="262" y="250" font-family="'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif"
+        font-size="27" font-weight="500" fill="#9fb0cc">CI/CD for boards — KiCad checks on every PR, gated on the diff</text>
+</svg>
