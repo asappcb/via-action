@@ -4,7 +4,7 @@
 #
 # For local dev in this repo, swap `image:` to `Dockerfile` (builds from source).
 name: 'via board review'
-description: 'Run via CI checks (DRC · connectivity · schematic-parity · DFM · BOM · cost) on changed KiCad boards in a PR and gate the merge.'
+description: 'Board checks (DRC, ERC, DFM, BOM, cost) on changed PCBs in a PR, gated on the differential vs the base branch.'
 author: 'asappcb'
 branding:
   icon: 'check-circle'
